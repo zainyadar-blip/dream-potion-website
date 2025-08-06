@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Potion - Choose Your Dream</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Dream Potion</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#dreams">Choose Dream</a></li>
+                <li><a href="#journal">Journal</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Welcome Page (Home ) -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="floating-particles"></div>
+            <div class="mist-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="potion-bottle">
+                <div class="bottle-glow"></div>
+                <div class="bottle-sparkles"></div>
+            </div>
+            <h1 class="hero-title">Only the rarest hearts receive magic at night.</h1>
+            <p class="hero-subtitle">Yours is one of them.</p>
+            <button class="cta-button" onclick="scrollToSection(\'dreams\')">Begin Your Journey</button>
+        </div>
+    </section>
+
+    <!-- What Is Dream Potion -->
+    <section id="about" class="about-section">
+        <div class="section-content">
+            <div class="floating-ingredients">
+                <div class="ingredient ingredient-1"></div>
+                <div class="ingredient ingredient-2"></div>
+                <div class="ingredient ingredient-3"></div>
+            </div>
+            <h2 class="section-title">What Is Dream Potion?</h2>
+            <div class="poetic-text">
+                <p class="quote">"One drop. One night. One unforgettable journey."</p>
+                <p class="description">An ingestible, sensory-based sleep ritual designed to guide your dreams.</p>
+                <p class="quote">"Your dreams were never random, they were waiting for direction."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choose Your Dream -->
+    <section id="dreams" class="dreams-section">
+        <div class="section-content">
+            <h2 class="section-title">Some dreams whisper. Others call your name.</h2>
+            <p class="section-subtitle">Choose your realm.</p>
+            <div class="dream-cards">
+                <div class="dream-card" data-theme="fantasy" onclick="selectDream(\'fantasy\')">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Fantasy</h3>
+                        <p>"There\'s a door in the clouds... and it knows your name."</p>
+                    </div>
+                </div>
+                <div class="dream-card" data-theme="romance" onclick="selectDream(\'romance\')">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Romance</h3>
+                        <p>"They found you in a dream... and they remembered your name."</p>
+                    </div>
+                </div>
+                <div class="dream-card" data-theme="adventure" onclick="selectDream(\'adventure\')">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Adventure</h3>
+                        <p>"A map appears in your hand... but it leads somewhere unknown."</p>
+                    </div>
+                </div>
+                <div class="dream-card" data-theme="mystery" onclick="selectDream(\'mystery\')">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Mystery</h3>
+                        <p>"You wake up with a key… but no memory of the lock."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dream Details Modal -->
+    <div id="dreamModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Prompt Library -->
+    <section id="prompts" class="prompts-section">
+        <div class="section-content">
+            <h2 class="section-title">Prompt Library</h2>
+            <div class="spellbook">
+                <div class="prompt-item" onclick="revealPrompt(this)">
+                    <div class="prompt-preview">Sketch your dream door</div>
+                    <div class="prompt-full hidden">Close your eyes and imagine a door that appears only in dreams. What does it look like? What material is it made of? Draw or describe every detail you can remember.</div>
+                </div>
+                <div class="prompt-item" onclick="revealPrompt(this)">
+                    <div class="prompt-preview">Describe the voice you heard but never saw</div>
+                    <div class="prompt-full hidden">In your dreams, you often hear a voice that guides you, warns you, or comforts you. Describe this voice - its tone, its words, its presence. Who do you think it belongs to?</div>
+                </div>
+                <div class="prompt-item" onclick="revealPrompt(this)">
+                    <div class="prompt-preview">What\'s on the other side of the sky?</div>
+                    <div class="prompt-full hidden">When you look up in your dreams, what lies beyond the stars? Describe the realm that exists above the clouds, beyond the atmosphere of your dream world.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dream Journal -->
+    <section id="journal" class="journal-section">
+        <div class="section-content">
+            <h2 class="section-title">Dream Journal</h2>
+            <div class="enchanted-book">
+                <div class="book-pages">
+                    <div class="testimonial">
+                        <p class="dream-entry">"Last night I walked through a library where books wrote themselves. The words glowed as they appeared on the pages..."</p>
+                        <span class="dreamer-name">- A Fellow Dreamer</span>
+                    </div>
+                    <div class="testimonial">
+                        <p class="dream-entry">"I found myself in a garden where flowers sang lullabies. Each bloom had a different melody..."</p>
+                        <span class="dreamer-name">- Dream Explorer</span>
+                    </div>
+                </div>
+                <button class="journal-cta">Start Your Dream Journal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dream Crafters\' Corner -->
+    <section id="community" class="community-section">
+        <div class="section-content">
+            <h2 class="section-title">You\'re not alone in the dream.</h2>
+            <div class="gallery">
+                <div class="dream-note">
+                    <p>"Dreams are letters we write to ourselves"</p>
+                </div>
+                <div class="dream-note">
+                    <p>"In my adventure dream, I discovered a hidden city beneath the ocean"</p>
+                </div>
+                <div class="dream-note">
+                    <p>"The romance theme gave me the most beautiful love story"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Guide -->
+    <section id="guide" class="guide-section">
+        <div class="section-content">
+            <h2 class="section-title">User Guide</h2>
+            <div class="parchment">
+                <div class="guide-content">
+                    <h3>How to Use Dream Potion</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <p>Choose your dream theme</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <p>Set a peaceful atmosphere</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <p>Take one drop before sleep</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <p>Let your imagination guide you</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">5</span>
+                            <p>Record your dream upon waking</p>
+                        </div>
+                    </div>
+                    <div class="tips">
+                        <h4>Tips for Best Results:</h4>
+                        <ul>
+                            <li>Use only one theme per night</li>
+                            <li>Avoid screens 30 minutes before sleep</li>
+                            <li>Keep a dream journal nearby</li>
+                            <li>Practice relaxation techniques</li>
+                        </ul>
+                    </div>
+                    <p class="final-message">"Let Dream Potion help you explore your subconscious, one night at a time."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secret Shop -->
+    <section id="shop" class="shop-section">
+        <div class="section-content">
+            <h2 class="section-title">Secret Shop</h2>
+            <div class="apothecary">
+                <div class="product-card">
+                    <div class="shimmer-border"></div>
+                    <h3>Dream Potion Bottle</h3>
+                    <p>The original magical elixir</p>
+                    <button class="claim-button">Claim Your Potion</button>
+                </div>
+                <div class="product-card">
+                    <div class="shimmer-border"></div>
+                    <h3>Prompt Deck</h3>
+                    <p>52 mystical dream prompts</p>
+                    <button class="claim-button">Claim Your Deck</button>
+                </div>
+                <div class="product-card">
+                    <div class="shimmer-border"></div>
+                    <h3>Dream Box</h3>
+                    <p>Mystery bundle of dream tools</p>
+                    <button class="claim-button">Claim Your Box</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join the Experience -->
+    <section id="signup" class="signup-section">
+        <div class="section-content">
+            <h2 class="section-title">Become a Dream Crafter</h2>
+            <p class="signup-description">Receive secret challenges, new prompts, and dream letters.</p>
+            <form class="moonlit-form" onsubmit="submitForm(event)">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="submit-button">Join the Dream</button>
+            </form>
+            <div id="letter-animation" class="letter-float hidden"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
